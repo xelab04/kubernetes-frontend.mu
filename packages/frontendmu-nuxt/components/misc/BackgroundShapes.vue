@@ -136,7 +136,8 @@
 
 <style>
   .bg-animation {
-    display: none;
+    opacity: 0.1;
+    animation: spin 50s ease-in-out infinite;
   }
 
   .bg-position {
@@ -145,8 +146,6 @@
   }
 
   html.dark-mode .bg-animation {
-    display: block;
-    animation: spin 50s ease-in-out infinite;
     opacity: 0.2;
   }
 </style>
