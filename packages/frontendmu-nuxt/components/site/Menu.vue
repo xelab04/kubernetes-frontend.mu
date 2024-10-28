@@ -67,7 +67,7 @@ const links: TMenu = {
       },
       {
         title: "GitHub",
-        href: "https://github.com/Front-End-Coders-Mauritius?ref=frontend.mu",
+        href: "https://github.com/frontendmu?ref=frontend.mu",
         class: "",
       },
       {
@@ -197,7 +197,7 @@ onMounted(toggleHeader);
         </nav>
         <div>
           <div class="flex items-center gap-2">
-            <!-- <a target="_blank" href="https://github.com/Front-End-Coders-Mauritius">
+            <!-- <a target="_blank" href="hhttps://github.com/frontendmu/frontend.mu/">
               <span class="sr-only">GitHub Repository</span>
               <Icon name="carbon:logo-github" class="w-4 h-4 text-verse-600 dark:text-verse-100" />
             </a> -->
