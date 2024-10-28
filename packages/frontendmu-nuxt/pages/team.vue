@@ -93,7 +93,7 @@ const NuxtLink = resolveComponent('NuxtLink')
 
       <ul id="team" role="list" class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:gap-x-8">
         <li v-for="person in contributors" :key="person.username">
-          <a :href="`https://github.com/Front-End-Coders-Mauritius/frontendmu-astro/commits?author=${person.username}`"
+          <a :href="`https://github.com/frontendmu/frontend.mu/commits/?author=${person.username}`"
             target="_blank" class="space-y-4">
             <img
               class="mx-auto h-20 w-20 rounded-full border-verse-2 shadow-lg 00 border p-2 lg:w-48 lg:h-48 profile-avatar"
