@@ -43,7 +43,7 @@ body = """
 trim = true
 # postprocessors
 postprocessors = [
-  { pattern = '<REPO>', replace = "https://github.com/Front-End-Coders-Mauritius/frontend.mu" }, # replace repository URL
+  { pattern = '<REPO>', replace = "https://github.com/frontendmu/frontend.mu" }, # replace repository URL
 ]
 
 [git]
