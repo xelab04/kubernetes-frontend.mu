@@ -1,7 +1,7 @@
 import fs from "fs";
 import { execSync } from "child_process";
 
-const owner = "Front-End-Coders-Mauritius";
+const owner = "frontendmu";
 const repo = "frontend.mu";
 const branch = "main"; // Replace with the default branch of your repository
 
