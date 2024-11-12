@@ -1,24 +1,25 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted } from 'vue'
+import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHATSAPP_URL } from '@/constants'
 
-const router = useRouter();
+const router = useRouter()
 
 interface TMenuItem {
-  title: string;
-  href: string;
-  class?: string;
-  children?: TMenuItem[];
+  title: string
+  href: string
+  class?: string
+  children?: TMenuItem[]
 }
 
 interface TMenu {
-  [key: string]: TMenuItem;
+  [key: string]: TMenuItem
 }
 
 const links: TMenu = {
   about: {
-    title: "About",
-    href: "/about",
-    class: "hidden md:block",
+    title: 'About',
+    href: '/about',
+    class: 'hidden md:block',
     children: [
       // {
       //   title: 'FAQ',
@@ -26,145 +27,146 @@ const links: TMenu = {
       //   class: '',
       // },
       {
-        title: "History",
-        href: "/history",
-        class: "",
+        title: 'History',
+        href: '/history',
+        class: '',
       },
       {
-        title: "Contribute",
-        href: "/contribute",
-        class: "",
+        title: 'Contribute',
+        href: '/contribute',
+        class: '',
       },
       {
-        title: "Code of conduct",
-        href: "/code_of_conduct",
-        class: "",
+        title: 'Code of conduct',
+        href: '/code_of_conduct',
+        class: '',
       },
       {
-        title: "Coding Guidelines",
-        href: "/coding_guidelines",
-        class: "",
+        title: 'Coding Guidelines',
+        href: '/coding_guidelines',
+        class: '',
       },
       {
-        title: "WhatsApp",
-        href: "https://chat.whatsapp.com/invite/0kQ2QX0ZQ0j1YQ4X6Q4Q4Q",
-        class: "",
+        title: 'WhatsApp',
+        href: WHATSAPP_URL,
+        class: '',
       },
       {
-        title: "Instagram",
-        href: "https://www.instagram.com/frontend.mu/?ref=frontend.mu",
-        class: "",
+        title: 'Instagram',
+        href: INSTAGRAM_URL,
+        class: '',
       },
       {
-        title: "LinkedIn",
-        href: "https://www.linkedin.com/company/81846464/admin/?ref=frontend.mu",
-        class: "",
+        title: 'LinkedIn',
+        href: LINKEDIN_URL,
+        class: '',
       },
       {
-        title: "Join Discord",
-        href: "https://discord.gg/WxXW9Jvv6k?ref=frontend.mu",
-        class: "",
+        title: 'Join Discord',
+        href: DISCORD_URL,
+        class: '',
       },
       {
-        title: "GitHub",
-        href: "https://github.com/frontendmu?ref=frontend.mu",
-        class: "",
+        title: 'GitHub',
+        href: GITHUB_URL,
+        class: '',
       },
       {
-        title: "Twitter",
-        href: "https://twitter.com/frontendmu?ref=frontend.mu",
-        class: "",
+        title: 'Twitter',
+        href: TWITTER_URL,
+        class: '',
       },
     ],
   },
   meetups: {
-    title: "Meetups",
-    href: "/meetups",
+    title: 'Meetups',
+    href: '/meetups',
   },
   community: {
-    title: "Community",
-    href: "/community",
+    title: 'Community',
+    href: '/community',
   },
   team: {
-    title: "Team",
-    href: "/team",
-    class: "hidden md:block",
+    title: 'Team',
+    href: '/team',
+    class: 'hidden md:block',
   },
   sponsors: {
-    title: "Sponsors",
-    href: "/sponsors",
-    class: "hidden md:block",
+    title: 'Sponsors',
+    href: '/sponsors',
+    class: 'hidden md:block',
   },
-};
+}
 
 function toggleHeader() {
-  const headerElement = document.querySelector(".menu-wrapper") as HTMLElement;
+  const headerElement = document.querySelector('.menu-wrapper') as HTMLElement
 
   // headerOffset tracks how much the header has been moved vertically
-  let headerOffset = 0;
+  let headerOffset = 0
 
   // This keeps track of the previous scroll position to calculate whether the user is scrolling up or down.
-  let previousScrollPosition = 0;
+  let previousScrollPosition = 0
 
   if (headerElement) {
     const handleScroll = () => {
       window.requestAnimationFrame(() => {
-        const headerHeight = headerElement.clientHeight;
+        const headerHeight = headerElement.clientHeight
 
         // the current vertical scroll position of the page
-        const currentScrollPosition =
-          window.scrollY || document.documentElement.scrollTop;
+        const currentScrollPosition
+          = window.scrollY || document.documentElement.scrollTop
 
         // the distance that the user has scrolled since the last scroll event
-        const distance = currentScrollPosition - previousScrollPosition;
+        const distance = currentScrollPosition - previousScrollPosition
 
         // New vertical position of the header
         const nextHeaderOffset = Math.min(
           Math.max(headerOffset + distance, 0),
-          headerHeight
-        );
+          headerHeight,
+        )
 
         // checks if the user has scrolled past the header and nextHeaderOffset differs from the current position
         if (
-          currentScrollPosition >= headerHeight &&
-          nextHeaderOffset !== headerOffset
+          currentScrollPosition >= headerHeight
+          && nextHeaderOffset !== headerOffset
         ) {
-          headerOffset = nextHeaderOffset;
-          headerElement.style.transform = `translateY(-${headerOffset}px)`;
+          headerOffset = nextHeaderOffset
+          headerElement.style.transform = `translateY(-${headerOffset}px)`
         }
 
         // if the user has scrolled past the header, we add these classes
         if (currentScrollPosition > headerHeight) {
           headerElement.classList.add(
-            "intersect",
-            "shadow-sm",
-            "dark:bg-verse-900/50",
-            "bg-verse-50/50"
-          );
-        } else {
+            'intersect',
+            'shadow-sm',
+            'dark:bg-verse-900/50',
+            'bg-verse-50/50',
+          )
+        }
+        else {
           headerElement.classList.remove(
-            "intersect",
-            "shadow-sm",
-            "dark:bg-verse-900/50",
-            "bg-verse-50/50"
-          );
+            'intersect',
+            'shadow-sm',
+            'dark:bg-verse-900/50',
+            'bg-verse-50/50',
+          )
         }
 
-        previousScrollPosition = currentScrollPosition;
-      });
-    };
+        previousScrollPosition = currentScrollPosition
+      })
+    }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true })
   }
 }
 
 function handleRightClick(event: MouseEvent) {
   // prevent default and navigate to /branding
-  event.preventDefault();
-  router.push("/branding");
+  event.preventDefault()
+  router.push('/branding')
 }
 
-onMounted(toggleHeader);
+onMounted(toggleHeader)
 </script>
 
 <template>
