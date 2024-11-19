@@ -238,8 +238,6 @@ export default function useAuth(client: DirectusClient<any> & AuthenticationClie
     }
 
     console.log('Provider not found')
-
-    return false
   }
 
   async function updateUserProfile({ profile_updates }: { profile_updates: DirectusAstroUser }) {
