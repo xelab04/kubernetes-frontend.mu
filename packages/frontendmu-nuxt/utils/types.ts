@@ -63,6 +63,7 @@ export interface DirectusEvent {
   title: string | undefined
   description: string
   Location: string | undefined
+  parking_location: string | null
   Venue: string | undefined
   Date: string | undefined
   Time: string | undefined

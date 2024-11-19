@@ -22,7 +22,7 @@
         </template>
       </HomeSocialCard>
 
-      <HomeSocialCard href="https://github.com/Front-End-Coders-Mauritius" class="bg-[#333] text-sm md:text-normal">
+      <HomeSocialCard href="https://github.com/frontendmu" class="bg-[#333] text-sm md:text-normal">
         <template #tagline>
           <p>GitHub</p>
         </template>

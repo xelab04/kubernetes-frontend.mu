@@ -35,7 +35,7 @@ async function loadSpeakersUncached() {
 const loadSpeakers = Memoize(loadSpeakersUncached);
 
 // Photo albums
-const photoAlbumSource = "https://raw.githubusercontent.com/Front-End-Coders-Mauritius/google-photos-sync/main/";
+const photoAlbumSource = "https://raw.githubusercontent.com/frontendmu/google-photos-sync/main/";
 async function loadPhotosUncached() {
   let albumsPhotos = await fetch(`${photoAlbumSource}index.json`);
   albumsPhotos = await albumsPhotos.json();
