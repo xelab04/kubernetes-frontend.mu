@@ -124,24 +124,24 @@ const currentAlbum = computed(() => fetchAlbumDetails(props.getCurrentEvent?.alb
                       Meetup Location
                     </div>
                   </dt>
-                  <dd class="text-2xl font-extrabold tracking-tight text-verse-900 dark:text-verse-200 md:text-3xl">
+                  <dd class="text-2xl font-extrabold tracking-tight text-verse-900 dark:text-verse-200 md:text-3xl mb-2">
                     {{ getCurrentEvent.Location }}
                   </dd>
                   <div v-if="getCurrentEvent.map">
-                    <a :href="getCurrentEvent.map" target="_blank" class="uppercase text-xs text-verse-100 bg-verse-400 rounded-full p-2" aria-label="View event location on map">
+                    <a :href="getCurrentEvent.map" target="_blank" class="text-xs text-verse-100 font-medium bg-verse-400 hover:bg-verse-500 transition-colors duration-200 rounded-full px-3 py-2" aria-label="View event location on map">
                       View on map
                     </a>
                   </div>
                 </div>
               </template>
               <div class="border-t-2 grid grid-rows-[auto_1fr] gap-2 border-verse-900/20 dark:border-verse-800/50 pt-4 md:pt-6">
-                <dt class="text-base flex justify-between font-medium text-verse-500 dark:text-verse-300">
+                <dt class="text-base flex justify-between font-medium text-verse-500 dark:text-verse-300 mb-2">
                   <div>
                     Parking Location
                   </div>
                 </dt>
                 <dd v-if="getCurrentEvent.parking_location">
-                  <a :href="getCurrentEvent.parking_location" target="_blank" class="uppercase text-xs text-verse-100 bg-verse-400 rounded-full p-2" aria-label="View parking location on map">
+                  <a :href="getCurrentEvent.parking_location" target="_blank" class="text-xs text-verse-100 font-medium bg-verse-400 hover:bg-verse-500 transition-colors duration-200 rounded-full px-3 py-2" aria-label="View parking location on map">
                     View on map
                   </a>
                 </dd>
