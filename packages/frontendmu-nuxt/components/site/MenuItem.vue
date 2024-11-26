@@ -26,6 +26,7 @@ interface Props {
     links[item].class,
     currentPath.includes(links[item].href) ? 'dark:text-white' : 'text-verse-700 dark:text-verse-300',
   ]"
+    :aria-haspopup="links[item].title === 'About' ? 'true' : undefined"
   >
     <NuxtLink class="flex items-center" :href="links[item].href"
               :target="!!links[item].href.includes(&quot;https&quot;) ? &quot;_blank&quot; : &quot;_self&quot;"
@@ -67,6 +68,7 @@ interface Props {
 .nav-link {
     position: relative;
 
+    &:focus-within,
     &:hover {
 
         .menu-dropdown {
