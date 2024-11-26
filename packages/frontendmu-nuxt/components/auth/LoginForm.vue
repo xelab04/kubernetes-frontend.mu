@@ -95,35 +95,26 @@ const developmentEnvironment = process.env.NODE_ENV === 'development'
         </form>
 
         <div v-else>
-          <div class="relative flex justify-center text-sm font-medium leading-6">
-            <span class="pb-8 text-verse-900 dark:text-verse-100 text-lg">connect using</span>
-          </div>
-
           <div class="relative">
             <div class="absolute inset-0 flex items-center" aria-hidden="true">
               <div class="w-full border-t border-verse-500/20" />
             </div>
           </div>
 
-          <div class="mt-10 grid sm:grid-cols-2 gap-4">
+          <div class="flex flex-col space-y-3">
             <a :href="oAuthLogin('google')"
               class="flex w-full items-center justify-center gap-3 rounded-md bg-[#000000] hover:bg-black/50 transition-all duration-300 px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]">
-              <Icon name="logos:google-icon" class="h-5 w-5" />
-              <span class="text-sm font-semibold leading-6">Google</span>
+              <Icon name="logos:google-icon" class="w-5 h-5" />
+              <span class="text-sm font-semibold leading-6">Continue with Google</span>
             </a>
 
             <AuthLoginWithGithub />
 
-            <!-- <a
-              :href="oAuthLogin('discord')"
+            <!-- <a :href="oAuthLogin('discord')"
               class="flex w-full items-center justify-center gap-3 rounded-md bg-[#000000]  hover:bg-black/50  px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24292F]"
-              disabled
-            >
-              <Icon
-                name="logos:discord-icon"
-                class="h-5 w-5"
-              />
-              <span class="text-sm font-semibold leading-6">Discord</span>
+              disabled>
+              <Icon name="logos:discord-icon" class="w-5 h-5" />
+              <span class="text-sm font-semibold leading-6">Continue with Discord</span>
             </a> -->
           </div>
         </div>
