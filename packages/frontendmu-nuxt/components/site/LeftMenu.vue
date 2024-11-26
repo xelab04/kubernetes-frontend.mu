@@ -7,6 +7,7 @@ import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHAT
     class="fixed bottom-[50px] gap-4 flex-col pl-4 justify-end w-10 hidden xl:flex z-30"
   >
     <a
+      aria-label="Discord"
       target="_blank"
       :href="DISCORD_URL"
       rel="noopener noreferrer nofollow"
@@ -16,6 +17,7 @@ import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHAT
     </a>
 
     <a
+      aria-label="Github"
       target="_blank"
       :href="GITHUB_URL"
       rel="noopener noreferrer nofollow"
@@ -25,6 +27,7 @@ import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHAT
     </a>
 
     <a
+      aria-label="Whatsapp"
       target="_blank"
       :href="WHATSAPP_URL"
       rel="noopener noreferrer nofollow"
@@ -34,6 +37,7 @@ import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHAT
     </a>
 
     <a
+      aria-label="Twitter"
       target="_blank"
       :href="TWITTER_URL"
       rel="noopener noreferrer nofollow"
@@ -43,6 +47,7 @@ import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHAT
     </a>
 
     <a
+      aria-label="Instagram"
       target="_blank"
       :href="INSTAGRAM_URL"
       rel="noopener noreferrer nofollow"
@@ -52,6 +57,7 @@ import { DISCORD_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TWITTER_URL, WHAT
     </a>
 
     <a
+      aria-label="LinkedIn"
       target="_blank"
       :href="LINKEDIN_URL"
       rel="noopener noreferrer nofollow"
